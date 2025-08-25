@@ -29,10 +29,7 @@ import javax.net.ssl.SSLContext;
 public class Main {
     public static void main(String[] args) {
         try {
-//            System.setProperty("javax.net.ssl.trustStore", "/tmp/cm-auto-global_truststore.jks");
-//            System.setProperty("javax.net.ssl.trustStorePassword", "KIEKMAMNxfa2JWIitzb3dShyW3gmFKuxa5wQVm6U2tO");
-
-            final HttpHost host = new HttpHost("https","tpipv6testing-3.vpc.eng.cloudera.com", 9200);
+            final HttpHost host = new HttpHost("https", args[0], 9200);
 
             final UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("admin", "admin".toCharArray());
             final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
